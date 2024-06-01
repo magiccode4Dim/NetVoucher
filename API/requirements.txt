@@ -1,0 +1,8 @@
+Django
+djangorestframework
+python-dotenv
+python-decouple
+sqlparse
+tzdata
+asgiref
+drf-yasg
