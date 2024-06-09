@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Pacote
+from .models import Cliente
 # Register your models here.
-admin.site.register(Pacote)
+admin.site.register(Cliente)

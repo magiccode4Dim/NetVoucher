@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Pacote',
     'Router',
     'Sessao',
+    'Cliente',
     'User',
     'rest_framework',
     'rest_framework.authtoken',
@@ -98,7 +99,13 @@ DATABASES = {
 
 #Roteadores de base de dados
 DATABASE_ROUTERS = [
+                    'User.routers.DjangoContribRouter',
                     'Compra.routers.CompraRouter',
+                    'Cliente.routers.ClienteRouter',
+                    'Pacote.routers.PacoteRouter',
+                    'Router.routers.RouterRouter',
+                    'Sessao.routers.SessaoRouter',
+                    'Network.routers.NetworkRouter',
                     ]
 
 

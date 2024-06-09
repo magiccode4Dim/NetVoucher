@@ -1,0 +1,34 @@
+
+Para a migracao, será necessário executar os seguintes comandos em sequencia:
+
+python3 manage.py makemigrations Cliente
+python3 manage.py makemigrations Pacote
+python3 manage.py makemigrations Compra
+python3 manage.py makemigrations Sessao
+python3 manage.py makemigrations Router
+python3 manage.py makemigrations Network
+python3 manage.py makemigrations User
+
+Primeiro, deve-se migrar os modelos das aplicacoes defauls do django que são :
+admin, auth, authtoken, contenttypes, sessions
+
+
+python3 manage.py migrate --database=default admin
+python3 manage.py migrate --database=default auth
+python3 manage.py migrate --database=default authtoken
+python3 manage.py migrate --database=default contenttypes
+python3 manage.py migrate --database=default sessions
+
+
+Em seguida, as demais apps do sistema:
+
+python3 manage.py migrate --database=default Cliente;
+python3 manage.py migrate --database=default Pacote;
+python3 manage.py migrate --database=default Compra;
+python3 manage.py migrate --database=default Sessao;
+python3 manage.py migrate --database=default Router;
+python3 manage.py migrate --database=default Network
+
+...
+
+python3 manage.py createsuperuser --database=default  

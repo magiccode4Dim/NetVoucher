@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Agente
+from .models import Compra
 
 class CompraSerializer(serializers.ModelSerializer):
     class Meta:
         model=Compra
-        fields=('id')
+        fields=('id','data','id_pacote','id_cliente')
