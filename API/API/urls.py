@@ -22,6 +22,7 @@ from rest_framework.schemas import get_schema_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('User.urls')),
+    path('cliente/', include('Cliente.urls')),
     path('docs/', TemplateView.as_view(
         template_name='docs.html',
         extra_context={'schema_url':'api_schema'}
