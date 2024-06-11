@@ -6,5 +6,7 @@ from .views import *
 app_name = 'Compra'
 
 urlpatterns = [
-         
+    path('register',Register.as_view(),name="RegisterCompra"),
+    path('getall',getAll,name="getall"),
+    path('get/<int:id_compra>',get,name="get")   
 ]

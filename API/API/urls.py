@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('User.urls')),
     path('cliente/', include('Cliente.urls')),
+    path('compra/', include('Compra.urls')),
+    path('pacote/', include('Pacote.urls')),
     path('docs/', TemplateView.as_view(
         template_name='docs.html',
         extra_context={'schema_url':'api_schema'}
