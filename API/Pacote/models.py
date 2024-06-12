@@ -7,4 +7,5 @@ class Pacote(models.Model):
     nome = models.CharField(max_length=100,default='')
     script = models.CharField(max_length=700,default='')
     preco = models.FloatField(default=0.0)
-    expira_em = models.DateTimeField(default=None)
+    #m-h-d-s-m-a minuto,hora,dia,semana,mes,ano
+    expira_em = models.CharField(max_length=1000,default='0-0-0-0-0-0')
