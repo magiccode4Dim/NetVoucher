@@ -77,7 +77,7 @@ def update(request):
             RESPONSE CODE 401: Acesso Negado.</br> 
             RESPONSE CODE 500: Algum erro com o servidor.</br>
         </br><b>PRECISA DE AUTENTICAÇÃO</b>: SIM</br>
-        </br><b>QUEM PODE ACESSAR?</b>: CLIENTES</br>  
+        </br><b>QUEM PODE ACESSAR?</b>: ADMIN</br>  
     """
     #identificacao
     id_user = request.user.id
@@ -147,7 +147,7 @@ class Register(APIView):
             RESPONSE CODE 401: Acesso Negado.</br>
             RESPONSE CODE 500: Algum erro com o servidor.</br>
         </br><b>PRECISA DE AUTENTICAÇÃO</b>: SIM</br>
-        </br><b>QUEM PODE ACESSAR?</b>: TODOS</br>  
+        </br><b>QUEM PODE ACESSAR?</b>: ADMIN</br>  
     """
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]  #
