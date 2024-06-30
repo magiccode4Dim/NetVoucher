@@ -28,6 +28,7 @@ urlpatterns = [
     path('network/', include('Network.urls')),
     path('router/', include('Router.urls')),
     path('sessao/', include('Sessao.urls')),
+    path('recarga/', include('Recarga.urls')),
     path('docs/', TemplateView.as_view(
         template_name='docs.html',
         extra_context={'schema_url':'api_schema'}

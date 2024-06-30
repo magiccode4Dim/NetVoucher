@@ -4,4 +4,4 @@ from .models import Pacote
 class PacoteSerializer(serializers.ModelSerializer):
     class Meta:
         model=Pacote
-        fields=('id','nome','script','preco','expira_em')
+        fields=('id','nome','script','expira_em')

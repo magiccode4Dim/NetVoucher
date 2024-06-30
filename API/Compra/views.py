@@ -17,6 +17,9 @@ from Cliente.models import Cliente
 from .serializer  import CompraSerializer
 import Compra as cp
 import Cliente as cl
+from Recarga.models import Recarga
+from Recarga.views import updateRecarga
+import Recarga as rt
 # Create your views here.
 
 #ADMIN, CLIENT
@@ -105,11 +108,23 @@ class Register(APIView):
             return Response({"erro":"client not found"}, status=status.HTTP_404_NOT_FOUND)
 
         data = request.data
+        try:
+            code = int(data.pop("code"))
+        except Exception:
+            return Response({"erro":"atribute code not found"}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            r = Recarga.objects.get(code=code,is_valid=True)
+        except rt.models.Recarga.DoesNotExist:
+             return Response({"erro":"invalid atribute code"}, status=status.HTTP_400_BAD_REQUEST)
+        data["id_recarga"] = r.id
         data["id_cliente"] = cli.id
         newCompra =  CompraSerializer(data=data)
         if newCompra.is_valid():
             #SISTEMA DE PAGAMENTO
             newCompra.save()
+            #deve tornar nula a recarga para que nao esteja disponivel
+            r.is_valid = False
+            updateRecarga(r)
             return Response({"message":"Compra Efectuada com Sucesso."},status=status.HTTP_201_CREATED)
         else:
-            return Response(newConta.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(newCompra.errors, status=status.HTTP_400_BAD_REQUEST)

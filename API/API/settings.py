@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Sessao',
     'Cliente',
     'User',
+    'Recarga',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
@@ -106,6 +107,7 @@ DATABASE_ROUTERS = [
                     'Router.routers.RouterRouter',
                     'Sessao.routers.SessaoRouter',
                     'Network.routers.NetworkRouter',
+                    'Recarga.routers.RecargaRouter',
                     ]
 
 

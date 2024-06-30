@@ -3,6 +3,7 @@ Para a migracao, será necessário executar os seguintes comandos em sequencia:
 
 python3 manage.py makemigrations Cliente;
 python3 manage.py makemigrations Pacote;
+python3 manage.py makemigrations Recarga;
 python3 manage.py makemigrations Compra;
 python3 manage.py makemigrations Sessao;
 python3 manage.py makemigrations Router;
@@ -24,10 +25,11 @@ Em seguida, as demais apps do sistema:
 
 python3 manage.py migrate --database=default Cliente;
 python3 manage.py migrate --database=default Pacote;
+python3 manage.py migrate --database=default Recarga;
 python3 manage.py migrate --database=default Compra;
 python3 manage.py migrate --database=default Router;
 python3 manage.py migrate --database=default Sessao;
 python3 manage.py migrate --database=default Network;
-...
+
 
 python3 manage.py createsuperuser --database=default  
